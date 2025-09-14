@@ -3,13 +3,33 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Search, Star, MapPin, Coffee, UtensilsCrossed, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Autoplay from "embla-carousel-autoplay";
 import heroImage from "@/assets/hero-cafe.jpg";
 import restaurantImage from "@/assets/restaurant-card.jpg";
 import cafeImage from "@/assets/cafe-workspace.jpg";
 
 const Index = () => {
+  const keywords = [
+    "คาเฟ่ ใกล้ม.กรุงเทพ",
+    "คาเฟ่ วิวดี ใกล้ ม.กรุงเทพ", 
+    "อาหารอร่อย ใกล้ ม.กรุงเทพ",
+    "คาเฟ่นั่งทำงาน รังสิต",
+    "ร้านกาแฟ ใกล้ม.กรุงเทพ รังสิต",
+    "คาเฟ่มินิมอล แถวมอกรุงเทพ",
+    "ร้านอาหาร ใกล้ม.กรุงเทพ มื้อกลางวัน",
+    "คาเฟ่เปิดเช้า ม.กรุงเทพ",
+    "ร้านขนมหวาน ใกล้ ม.กรุงเทพ",
+    "ร้านอาหารราคานักศึกษา ม.กรุงเทพ",
+    "คาเฟ่ Instagram-able รังสิต",
+    "ร้านชาไข่มุก ใกล้ ม.กรุงเทพ",
+    "อาหารตามสั่ง ใกล้ม.กรุงเทพ",
+    "คาเฟ่ 24 ชั่วโมง รังสิต",
+    "ร้านอาหารเกาหลี ใกล้ ม.กรุงเทพ"
+  ];
+
   const featuredPlaces = [
     {
       name: "ครัวบ้านไผ่",
@@ -75,20 +95,38 @@ const Index = () => {
             </div>
           </div>
           
-          {/* Quick Links */}
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Badge variant="secondary" className="text-sm py-2 px-4 bg-card/80 backdrop-blur-sm">
-              คาเฟ่นั่งทำงาน
-            </Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4 bg-card/80 backdrop-blur-sm">
-              ร้านอาหารราคานักศึกษา
-            </Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4 bg-card/80 backdrop-blur-sm">
-              คาเฟ่เปิดเช้า
-            </Badge>
-            <Badge variant="secondary" className="text-sm py-2 px-4 bg-card/80 backdrop-blur-sm">
-              อาหารอร่อยใกล้ ม.กรุงเทพ
-            </Badge>
+          {/* Quick Links Carousel */}
+          <div className="max-w-4xl mx-auto mt-8">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                duration: 30,
+                dragFree: true,
+                containScroll: "trimSnaps",
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                  stopOnInteraction: false,
+                  stopOnMouseEnter: true,
+                })
+              ]}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4 carousel-smooth">
+                {keywords.map((keyword, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-auto">
+                    <Badge 
+                      variant="secondary" 
+                      className="text-sm py-2 px-4 bg-card/80 backdrop-blur-sm hover:bg-card/90 cursor-pointer badge-smooth-hover whitespace-nowrap"
+                    >
+                      {keyword}
+                    </Badge>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </div>
@@ -178,38 +216,8 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Popular Keywords */}
-      <div className="bg-card py-12 border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">คำค้นหายอดนิยม</h3>
-            <p className="text-muted-foreground">คีย์เวิร์ดที่นักศึกษาค้นหามากที่สุด</p>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              "คาเฟ่ ใกล้ม.กรุงเทพ",
-              "ร้านกาแฟ ใกล้ม.กรุงเทพ รังสิต",
-              "คาเฟ่นั่งทำงาน รังสิต",
-              "คาเฟ่มินิมอล แถวมอกรุงเทพ",
-              "ร้านอาหาร ใกล้ม.กรุงเทพ มื้อกลางวัน",
-              "อาหารอร่อย ใกล้ ม.กรุงเทพ",
-              "คาเฟ่เปิดเช้า ม.กรุงเทพ",
-              "ร้านขนมหวาน ใกล้ ม.กรุงเทพ",
-              "คาเฟ่ วิวดี ใกล้ ม.กรุงเทพ",
-              "ร้านอาหารราคานักศึกษา ม.กรุงเทพ"
-            ].map((keyword, index) => (
-              <Badge 
-                key={index} 
-                variant="outline" 
-                className="text-sm py-2 px-4 hover:bg-accent hover:text-accent-foreground cursor-pointer transition-colors duration-200"
-              >
-                {keyword}
-              </Badge>
-            ))}
-          </div>
-        </div>
-      </div>
+      
+      
     </div>
   );
 };
