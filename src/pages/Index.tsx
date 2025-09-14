@@ -87,7 +87,7 @@ const Index = () => {
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6 text-muted-foreground" />
               <Input 
                 placeholder="ค้นหาร้านอาหาร คาเฟ่ หเมนูอาหาร..."
-                className="pl-12 h-14 text-lg bg-card/95 backdrop-blur-sm border-0 shadow-card"
+                className="pl-12 h-14 text-lg bg-card/95 backdrop-blur-sm border-0 shadow-card text-black"
               />
               <Button size="lg" className="absolute right-2 top-2 h-10 bg-coffee hover:bg-coffee/90">
                 ค้นหา
