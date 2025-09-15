@@ -80,36 +80,47 @@ const Cafes = () => {
       <Navigation />
       
       {/* Header Section */}
-      <div className="bg-gradient-warm text-primary-foreground py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">คาเฟ่ใกล้ม.กรุงเทพ</h1>
-          <p className="text-xl opacity-90 mb-8">ค้นหาคาเฟ่นั่งชิล นั่งทำงาน บรรยากาศดี ใกล้มหาวิทยาลัย</p>
-          
-          {/* Search Bar */}
-          <div className="max-w-2xl mx-auto flex space-x-4">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-              <Input 
-                placeholder="ค้นหาคาเฟ่ เช่น นั่งทำงาน, วิวสวน, เปิดเช้า..."
-                className="pl-10 bg-card border-0 h-12"
-              />
+      <div className="bg-gradient-warm text-primary-foreground py-8 sm:py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+              คาเฟ่ใกล้ม.กรุงเทพ
+            </h1>
+            <p className="text-base sm:text-lg lg:text-xl opacity-90 mb-6 sm:mb-8 max-w-2xl mx-auto">
+              ค้นหาคาเฟ่นั่งชิล นั่งทำงาน บรรยากาศดี ใกล้มหาวิทยาลัย
+            </p>
+            
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
+                  <Input 
+                    placeholder="ค้นหาคาเฟ่ เช่น นั่งทำงาน, วิวสวน, เปิดเช้า..."
+                    className="pl-9 sm:pl-12 bg-card/95 backdrop-blur-sm border-0 h-12 sm:h-14 text-sm sm:text-base shadow-lg text-black"
+                  />
+                </div>
+                <Button variant="secondary" className="h-12 sm:h-14 px-4 sm:px-6 text-sm sm:text-base font-medium whitespace-nowrap shadow-lg">
+                  <Filter className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+                  <span className="hidden sm:inline">กรองตัวเลือก</span>
+                  <span className="sm:hidden">กรอง</span>
+                </Button>
+              </div>
+              
+   
             </div>
-            <Button variant="secondary" size="lg" className="h-12 px-6">
-              <Filter className="h-5 w-5 mr-2" />
-              กรองตัวเลือก
-            </Button>
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-2">คาเฟ่แนะนำ</h2>
-          <p className="text-muted-foreground">คาเฟ่บรรยากาศดี เหมาะนั่งชิล นั่งทำงาน ใกล้มหาวิทยาลัยกรุงเทพ</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">คาเฟ่แนะนำ</h2>
+          <p className="text-sm sm:text-base text-muted-foreground">คาเฟ่บรรยากาศดี เหมาะนั่งชิล นั่งทำงาน ใกล้มหาวิทยาลัยกรุงเทพ</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {cafes.map((cafe, index) => (
             <PlaceCard key={index} {...cafe} />
           ))}

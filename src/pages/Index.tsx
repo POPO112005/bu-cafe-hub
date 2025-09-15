@@ -65,7 +65,7 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <div className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      <div className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -73,30 +73,48 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-coffee/80 to-warm-brown/60"></div>
         </div>
         
-        <div className="relative z-10 text-center text-primary-foreground max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        <div className="relative z-10 text-center text-primary-foreground max-w-4xl mx-auto px-4 sm:px-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             ค้นหาร้านอาหาร & คาเฟ่
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 opacity-90">
             ใกล้มหาวิทยาลัยกรุงเทพ รังสิต
           </p>
           
           {/* Hero Search */}
-          <div className="max-w-2xl mx-auto">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6 text-muted-foreground" />
-              <Input 
-                placeholder="ค้นหาร้านอาหาร คาเฟ่ หเมนูอาหาร..."
-                className="pl-12 h-14 text-lg bg-card/95 backdrop-blur-sm border-0 shadow-card text-black"
-              />
-              <Button size="lg" className="absolute right-2 top-2 h-10 bg-coffee hover:bg-coffee/90">
+          <div className="max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto px-2 sm:px-0">
+            <div className="relative flex flex-col sm:flex-row gap-3 sm:gap-0">
+              {/* Mobile Layout */}
+              <div className="relative sm:hidden">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input 
+                  placeholder="ค้นหาร้านอาหาร คาเฟ่..."
+                  className="pl-10 pr-4 h-12 text-base bg-card/95 backdrop-blur-sm border-0 shadow-card text-black rounded-lg"
+                />
+              </div>
+              <Button className="sm:hidden h-11 text-base bg-coffee hover:bg-coffee/90 rounded-lg">
                 ค้นหา
               </Button>
+
+              {/* Desktop/Tablet Layout */}
+              <div className="relative hidden sm:block sm:flex-1">
+                <Search className="absolute left-4 md:left-5 top-1/2 transform -translate-y-1/2 h-5 w-5 md:h-6 md:w-6 text-muted-foreground" />
+                <Input 
+                  placeholder="ค้นหาร้านอาหาร คาเฟ่ หรือเมนูอาหาร..."
+                  className="pl-12 md:pl-14 pr-20 md:pr-24 h-12 md:h-14 text-base md:text-lg bg-card/95 backdrop-blur-sm border-0 shadow-card text-black rounded-l-lg sm:rounded-r-none"
+                />
+                <Button 
+                  size="sm" 
+                  className="absolute right-1 md:right-2 top-1 md:top-2 h-10 md:h-10 px-4 md:px-6 text-sm md:text-base bg-coffee hover:bg-coffee/90 rounded-lg"
+                >
+                  ค้นหา
+                </Button>
+              </div>
             </div>
           </div>
           
           {/* Quick Links Carousel */}
-          <div className="max-w-4xl mx-auto mt-8">
+          <div className="max-w-4xl mx-auto mt-6 sm:mt-8">
             <Carousel
               opts={{
                 align: "start",
@@ -114,12 +132,12 @@ const Index = () => {
               ]}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-4 carousel-smooth">
+              <CarouselContent className="-ml-1 sm:-ml-2 md:-ml-4 carousel-smooth">
                 {keywords.map((keyword, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-auto">
+                  <CarouselItem key={index} className="pl-1 sm:pl-2 md:pl-4 basis-auto">
                     <Badge 
                       variant="secondary" 
-                      className="text-sm py-2 px-4 bg-card/80 backdrop-blur-sm hover:bg-card/90 cursor-pointer badge-smooth-hover whitespace-nowrap"
+                      className="text-xs sm:text-sm py-1.5 sm:py-2 px-2 sm:px-4 bg-card/80 backdrop-blur-sm hover:bg-card/90 cursor-pointer badge-smooth-hover whitespace-nowrap"
                     >
                       {keyword}
                     </Badge>
@@ -132,13 +150,13 @@ const Index = () => {
       </div>
 
       {/* Featured Places */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">สถานที่แนะนำ</h2>
-          <p className="text-lg text-muted-foreground">ร้านอาหารและคาเฟ่ยอดนิยม ใกล้มหาวิทยาลัยกรุงเทพ</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3 sm:mb-4">สถานที่แนะนำ</h2>
+          <p className="text-base sm:text-lg text-muted-foreground">ร้านอาหารและคาเฟ่ยอดนิยม ใกล้มหาวิทยาลัยกรุงเทพ</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {featuredPlaces.map((place, index) => (
             <Card key={index} className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="relative h-48 overflow-hidden">
@@ -177,18 +195,18 @@ const Index = () => {
         </div>
 
         {/* Category Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           <Link to="/restaurants" className="group">
-            <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-64">
+            <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-48 sm:h-56 lg:h-64">
               <div className="relative h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-warm-orange/90 to-coffee/80 flex items-center justify-center">
-                  <div className="text-center text-primary-foreground">
-                    <UtensilsCrossed className="h-16 w-16 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="text-2xl font-bold mb-2">ร้านอาหาร</h3>
-                    <p className="text-lg opacity-90 mb-4">ค้นหาร้านอาหารอร่อยๆ ราคาเป็นกันเอง</p>
-                    <div className="flex items-center justify-center space-x-2 text-sm font-medium">
+                  <div className="text-center text-primary-foreground px-4">
+                    <UtensilsCrossed className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="text-xl sm:text-2xl font-bold mb-2">ร้านอาหาร</h3>
+                    <p className="text-sm sm:text-base lg:text-lg opacity-90 mb-3 sm:mb-4">ค้นหาร้านอาหารอร่อยๆ ราคาเป็นกันเอง</p>
+                    <div className="flex items-center justify-center space-x-2 text-xs sm:text-sm font-medium">
                       <span>ดูทั้งหมด</span>
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </div>
                 </div>
@@ -197,16 +215,16 @@ const Index = () => {
           </Link>
 
           <Link to="/cafes" className="group">
-            <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-64">
+            <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-48 sm:h-56 lg:h-64">
               <div className="relative h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-coffee/90 to-warm-brown/80 flex items-center justify-center">
-                  <div className="text-center text-primary-foreground">
-                    <Coffee className="h-16 w-16 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="text-2xl font-bold mb-2">คาเฟ่</h3>
-                    <p className="text-lg opacity-90 mb-4">คาเฟ่นั่งชิล นั่งทำงาน บรรยากาศดี</p>
-                    <div className="flex items-center justify-center space-x-2 text-sm font-medium">
+                  <div className="text-center text-primary-foreground px-4">
+                    <Coffee className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="text-xl sm:text-2xl font-bold mb-2">คาเฟ่</h3>
+                    <p className="text-sm sm:text-base lg:text-lg opacity-90 mb-3 sm:mb-4">คาเฟ่นั่งชิล นั่งทำงาน บรรยากาศดี</p>
+                    <div className="flex items-center justify-center space-x-2 text-xs sm:text-sm font-medium">
                       <span>ดูทั้งหมด</span>
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </div>
                 </div>
@@ -215,9 +233,6 @@ const Index = () => {
           </Link>
         </div>
       </div>
-
-      
-      
     </div>
   );
 };

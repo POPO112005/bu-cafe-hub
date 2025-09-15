@@ -80,36 +80,37 @@ const Restaurants = () => {
       <Navigation />
       
       {/* Header Section */}
-      <div className="bg-gradient-warm text-primary-foreground py-16">
+      <div className="bg-gradient-warm text-primary-foreground py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">ร้านอาหารใกล้ม.กรุงเทพ</h1>
-          <p className="text-xl opacity-90 mb-8">ค้นหาร้านอาหารอร่อยๆ ราคาเป็นกันเอง สำหรับนักศึกษา</p>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">ร้านอาหารใกล้ม.กรุงเทพ</h1>
+          <p className="text-base sm:text-lg lg:text-xl opacity-90 mb-6 sm:mb-8">ค้นหาร้านอาหารอร่อยๆ ราคาเป็นกันเอง สำหรับนักศึกษา</p>
           
           {/* Search Bar */}
-          <div className="max-w-2xl mx-auto flex space-x-4">
+          <div className="max-w-2xl mx-auto flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
               <Input 
                 placeholder="ค้นหาร้านอาหาร เช่น ข้าวผัด, ส้มตำ, พิซซ่า..."
-                className="pl-10 bg-card border-0 h-12"
+                className="pl-9 sm:pl-10 bg-card border-0 h-10 sm:h-12 text-sm sm:text-base text-black"
               />
             </div>
-            <Button variant="secondary" size="lg" className="h-12 px-6">
-              <Filter className="h-5 w-5 mr-2" />
-              กรองตัวเลือก
+            <Button variant="secondary" size="lg" className="h-10 sm:h-12 px-4 sm:px-6 text-sm sm:text-base">
+              <Filter className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+              <span className="hidden sm:inline">กรองตัวเลือก</span>
+              <span className="sm:hidden">กรอง</span>
             </Button>
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-2">ร้านอาหารแนะนำ</h2>
-          <p className="text-muted-foreground">ร้านอาหารอร่อยๆ ใกล้มหาวิทยาลัยกรุงเทพ ราคาเป็นกันเอง</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">ร้านอาหารแนะนำ</h2>
+          <p className="text-sm sm:text-base text-muted-foreground">ร้านอาหารอร่อยๆ ใกล้มหาวิทยาลัยกรุงเทพ ราคาเป็นกันเอง</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {restaurants.map((restaurant, index) => (
             <PlaceCard key={index} {...restaurant} />
           ))}
