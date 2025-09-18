@@ -52,9 +52,9 @@ const Restaurants = () => {
       highlights: ["Margherita", "Hawaiian", "Meat Lovers"]
     },
     {
-      name: "ป้าแก้วส้มตำ",
+      name: "ครัวลูกแมว",
       description: "ส้มตำรสจัดจ้าน บรรยากาศร่มๆ ย่านวิทยาเขต ราคาดี มีที่นั่งเยอะ เหมาะกับกิน กลุ่มใหญ่",
-      image: restaurantImage,
+      image: "https://img.wongnai.com/p/1920x0/2022/09/03/fdeafffc8cca4777a280f33e4e6f1fe8.jpg",
       rating: 4.4,
       priceRange: "25-70 บาท",
       openHours: "16:00-22:00",
@@ -65,7 +65,7 @@ const Restaurants = () => {
     {
       name: "Sushi Express",
       description: "ซูชิสดใหม่ คุณภาพดี ราคาเริ่มต้นลาน 40 บาท เหมาะสำหรับคนรักซูชิ บรรยากาศสะอาด",
-      image: restaurantImage,
+      image: "https://img.wongnai.com/p/1920x0/2022/08/06/246fd37f8518462e8c4fd0a074e8d235.jpg",
       rating: 4.1,
       priceRange: "40-150 บาท",
       openHours: "11:00-21:30",
@@ -86,19 +86,20 @@ const Restaurants = () => {
           <p className="text-base sm:text-lg lg:text-xl opacity-90 mb-6 sm:mb-8">ค้นหาร้านอาหารอร่อยๆ ราคาเป็นกันเอง สำหรับนักศึกษา</p>
           
           {/* Search Bar */}
-          <div className="max-w-2xl mx-auto flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
+          <div className="max-w-2xl mx-auto">
+            <div className="relative">
+              <Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
               <Input 
                 placeholder="ค้นหาร้านอาหาร เช่น ข้าวผัด, ส้มตำ, พิซซ่า..."
-                className="pl-9 sm:pl-10 bg-card border-0 h-10 sm:h-12 text-sm sm:text-base text-black"
+                className="pl-9 sm:pl-10 pr-20 sm:pr-24 bg-card border-0 h-10 sm:h-12 text-sm sm:text-base text-black rounded-lg"
               />
+              <Button 
+                size="sm"
+                className="absolute right-1 top-1/2 transform -translate-y-1/2 h-8 sm:h-10 px-3 sm:px-4 text-xs sm:text-sm bg-coffee hover:bg-coffee/90 rounded-md"
+              >
+                ค้นหา
+              </Button>
             </div>
-            <Button variant="secondary" size="lg" className="h-10 sm:h-12 px-4 sm:px-6 text-sm sm:text-base">
-              <Filter className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-              <span className="hidden sm:inline">กรองตัวเลือก</span>
-              <span className="sm:hidden">กรอง</span>
-            </Button>
           </div>
         </div>
       </div>

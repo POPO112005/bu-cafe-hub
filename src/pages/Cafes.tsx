@@ -92,22 +92,19 @@ const Cafes = () => {
             
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto">
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
-                  <Input 
-                    placeholder="ค้นหาคาเฟ่ เช่น นั่งทำงาน, วิวสวน, เปิดเช้า..."
-                    className="pl-9 sm:pl-12 bg-card/95 backdrop-blur-sm border-0 h-12 sm:h-14 text-sm sm:text-base shadow-lg text-black"
-                  />
-                </div>
-                <Button variant="secondary" className="h-12 sm:h-14 px-4 sm:px-6 text-sm sm:text-base font-medium whitespace-nowrap shadow-lg">
-                  <Filter className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-                  <span className="hidden sm:inline">กรองตัวเลือก</span>
-                  <span className="sm:hidden">กรอง</span>
+              <div className="relative">
+                <Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
+                <Input 
+                  placeholder="ค้นหาคาเฟ่ เช่น นั่งทำงาน, วิวสวน, เปิดเช้า..."
+                  className="pl-9 sm:pl-12 pr-20 sm:pr-24 bg-card/95 backdrop-blur-sm border-0 h-12 sm:h-14 text-sm sm:text-base shadow-lg text-black rounded-lg"
+                />
+                <Button 
+                  size="sm"
+                  className="absolute right-1.5 top-1/2 transform -translate-y-1/2 h-9 sm:h-11 px-3 sm:px-4 text-xs sm:text-sm bg-coffee hover:bg-coffee/90 rounded-md"
+                >
+                  ค้นหา
                 </Button>
               </div>
-              
-   
             </div>
           </div>
         </div>

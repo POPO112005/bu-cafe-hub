@@ -32,31 +32,31 @@ const Index = () => {
 
   const featuredPlaces = [
     {
-      name: "ครัวบ้านไผ่",
+      name: "ครัวลูกแมว",
       type: "restaurant",
-      image: restaurantImage,
+      image: "https://img.wongnai.com/p/1920x0/2022/09/03/fdeafffc8cca4777a280f33e4e6f1fe8.jpg",
       rating: 4.5,
-      distance: "200 ม.",
+      distance: "4 กม.",
       priceRange: "50-120 บาท",
       tags: ["อาหารไทย", "ราคานักศึกษา"]
     },
     {
-      name: "The Coffee Bean Studio",
-      type: "cafe",
-      image: cafeImage,
+      name: "สมยงตำซั่ว",
+      type: "restaurant",
+      image: "https://img.wongnai.com/p/1920x0/2022/08/06/246fd37f8518462e8c4fd0a074e8d235.jpg",
       rating: 4.6,
-      distance: "180 ม.",
+      distance: "1 กม.",
       priceRange: "60-150 บาท",
-      tags: ["นั่งทำงาน", "มินิมอล"]
+      tags: ["อาหารไทย", "ราคานักศึกษา"]
     },
     {
-      name: "Seoul Kitchen",
-      type: "restaurant",
-      image: restaurantImage,
+      name: "88 Coffee & Restaurant ",
+      type: "cafe",
+      image: "https://lh3.googleusercontent.com/geougc-cs/AB3l90DhjenxKu-cogZ4FWpxdR5PWfSyx0mGp_7ONP2c-tl3rLLnTAV1Q6LW5nOy3DGnAGpcm32QKxN7s_6NSQ22mAA2yZjJsTDXiBdyH2EwtM_TNPuaiYCGNS81EE5EPH2qed68-nYT=s3840-w3840-h2224-rw",
       rating: 4.3,
-      distance: "300 ม.",
+      distance: "1 กม.",
       priceRange: "80-200 บาท",
-      tags: ["อาหารเกาหลี", "Instagram-able"]
+      tags: ["อาหารไทย", "Instagram-able"]
     }
   ];
 
@@ -161,7 +161,7 @@ const Index = () => {
             <Card key={index} className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="relative h-48 overflow-hidden">
                 <img 
-                  src={place.image} 
+                  src={place.image}
                   alt={place.name}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
@@ -177,7 +177,7 @@ const Index = () => {
                 <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center space-x-1">
                     <MapPin className="h-4 w-4" />
-                    <span>{place.distance}</span>
+                    <span>4 กม.</span>
                   </div>
                   <span className="font-medium text-coffee">{place.priceRange}</span>
                 </div>
